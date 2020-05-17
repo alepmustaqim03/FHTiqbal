@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,height=device-height">
+        <!--Title Tab-->
+        <title>FHT - ToDo</title>
+        <!--Link Extension-->
+        <link rel="stylesheet" href="lib/jQuery/jquery.ui.min.css" />
+        <link rel="stylesheet" href="assets/todo.css" />
+        <link rel="stylesheet" href="assets/style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    </head>
+
+    <body class="well">
+        <div class="nav">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a id="len1" class="hoverable" href="index.html">Home</a></li>
+                <li><a id="len2" class="hoverable" href="todolist.html">ToDo List</a></li>
+            </ul>
+            </div>
+        </nav>
+        </div>
+
+        <!--Content-->
+        <div id="container" class="todolists">
+        	<div>
+	            <!--Header Content-->
+	            <div id="header"> Dashboard </div>
+
+	            <!--Column ToDo-->
+	            <!--Row Pending-->
+	            <div class="task-list task-container" id="pending">
+	                <!--Title Row-->
+	                <h3>Pending</h3>
+	            </div>
+
+	            <!--Row InProgress-->
+	            <div class="task-list task-container" id="inProgress">
+	                <!--Title Row-->
+	                <h3>In Progress</h3>
+	            </div>
+
+	            <!--Row Completed-->
+	            <div class="task-list task-container" id="completed">
+	                <h3>Completed</h3>
+	            </div>
+
+	            <!--Row Add Task-->
+	            <div class="task-list">
+	                <!--Title Row-->
+	                <h3>Add a task</h3>
+	                <!--Form Add Task-->
+	                <form id="todo-form">
+	                    <!--Input Title Task-->
+	                    <input type="text" placeholder="Title" />
+	                    <!--Input Description Task-->
+	                    <textarea placeholder="Description"></textarea>
+	                    <!--Input Date Task-->
+	                    <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
+	                    <!--Button Add Task-->
+	                    <br>
+	                    <input type="button" class="btn btn-primary" value="Add Task" onclick="todo.add();" />
+	                </form>
+	                <!--Button Clear All Task-->
+	                <input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
+	                <!--Section Delete Task-->
+	                <div id="delete-div">
+	                    Drag Here to Delete
+	                </div>
+            	</div>
+            </div>
+
+            <div style="clear:both;"></div>
+        </div>
+        <!--Link Extension-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/jQuery/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/Bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/jQuery/jquery.ui.min.js"></script>
+        <script type="text/javascript" src="assets/todo.js"></script>
+        <!--Extension-->
+        <script type="text/javascript">
+            $( "#datepicker" ).datepicker();
+            $( "#datepicker" ).datepicker("option", "dateFormat", "dd/mm/yy");
+
+            $(".task-container").droppable();
+            $(".todo-task").draggable({ revert: "valid", revertDuration:200 });
+            todo.init();
+
+            $(function(){
+                var str = '#len'; //increment by 1 up to 1-nelemnts
+                $(document).ready(function(){
+                    var i, stop;
+                    i = 1;
+                    stop = 4; //num elements
+                setInterval(function(){
+                    if (i > stop){
+                    return;
+                }
+                $('#len'+(i++)).toggleClass('bounce');
+                    }, 500)
+                });
+            });
+        </script>
+
+
+        
+
+    </body>
+</html>

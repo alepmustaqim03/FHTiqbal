@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Title Tab-->
+        <title>FHT - Home</title>
+        <!--Link Extension-->
+        <link rel="stylesheet" href="lib/jQuery/jquery.ui.min.css" />
+        <link rel="stylesheet" href="assets/todo.css" />
+        <link rel="stylesheet" href="assets/style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body class="well">
+        <div class="nav">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a id="len1" class="hoverable" href="index.html">Home</a></li>
+                <li><a id="len2" class="hoverable" href="todo.html">ToDo List</a></li>
+            </ul>
+        </div>
+        </nav>
+        </div>
+        <div class="card" style="margin: 50px;">
+            <div class="card-body" style="padding: 50px;height: 400px;">
+                <h1 class="card-title">FAMILY HAPPY TIMES</h1>
+                <br>
+                <h6 class="text-muted card-subtitle mb-2"><br>OUR OBJECTIVE<br><br></h6>
+                
+                <p class="card-text" style="margin: 10px;padding: 10px;">This website are here to help you manage your times with your family. Our objective is to make your moment with family to be better then it could be. Try out our To-Do List. We use your browser storage to ensure a speedy browsing through
+                    our site, which mean all the changes you made are saved in your brower/devices, not our server.<br><br></p>
+
+                <ul class="nav ">
+                	<li><a id="len1" class="hoverable" href="todo.html">ToDo List</a></li>
+                </ul>
+                
+            </div>
+        </div>
+        <!--Link Extension-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                var str = '#len'; //increment by 1 up to 1-nelemnts
+                $(document).ready(function(){
+                    var i, stop;
+                    i = 1;
+                    stop = 4; //num elements
+                    setInterval(function(){
+                        if (i > stop){
+                            return;
+                        }
+                    $('#len'+(i++)).toggleClass('bounce');
+                    }, 500)
+                });
+            });
+            </script>
+    </body>
+</html>
